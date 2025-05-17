@@ -1,68 +1,93 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@import "tailwindcss";
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+  --color-deep-blue: #0A192F;
+  --color-darker-blue: #020C1B;
+  --color-accent-blue: #64FFDA;
+  --color-text-white: #E6F1FF;
+  --color-text-light: #8892B0;
+  --color-text-lighter: #CCD6F6;
+  --border-radius-lg: var(--radius);
+  --border-radius-md: calc(var(--radius) - 2px);
+  --border-radius-sm: calc(var(--radius) - 4px);
+  --animate-fade-in-up: fade-in-up 0.5s ease-out;
+  --animate-fade-in: fade-in 0.5s ease-out;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+@keyframes gradientBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 171 100% 70%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 212 27% 84%;
+    --radius: 0.5rem;
   }
-  a:hover {
-    color: #747bff;
+  * {
+    @apply border-[hsl(var(--border))];
   }
-  button {
-    background-color: #f9f9f9;
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply text-text-white font-sans;
+    background: linear-gradient(-45deg, #0A192F, #1F4068, #162447, #1B1B2F);
+    background-size: 400% 400%;
+    animation: gradientBackground 15s ease infinite;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold text-text-lighter;
+  }
+}
+
+@layer utilities {
+  .nav-link {
+    @apply relative py-2 px-3 text-text-light hover:text-accent-blue transition-colors duration-300 after:absolute after:block after:w-0 after:h-[2px] after:bg-accent-blue after:bottom-0 after:left-0 after:transition-all after:duration-300 hover:after:w-full;
+  }
+  .section-heading {
+    @apply mb-12 text-3xl md:text-4xl font-bold text-text-lighter inline-flex items-center animate-fade-in-up;
+  }
+  .section-heading::after {
+    @apply content-[''] h-[1px] w-28 md:w-72 bg-text-light ml-6 opacity-30;
+  }
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 py-24 md:py-32;
+  }
+  .btn-primary {
+    @apply px-6 py-3 bg-transparent border border-accent-blue text-accent-blue font-medium rounded hover:bg-accent-blue/10 transition-colors duration-300 animate-fade-in;
   }
 }
