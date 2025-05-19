@@ -5,12 +5,13 @@
 @theme {
   --font-sans: 'Inter', sans-serif;
   --font-heading: 'Poppins', sans-serif;
-  --color-deep-blue: #0A192F;
-  --color-darker-blue: #020C1B;
-  --color-accent-blue: #64FFDA;
-  --color-text-white: #E6F1FF;
-  --color-text-light: #8892B0;
-  --color-text-lighter: #CCD6F6;
+  --color-darkest: #0A0A0A;
+  --color-darker: #404040;
+  --color-accent-purple: #C084FC;
+  --color-accent-purple-bright: #E879F9;
+  --color-text-white: #F3F4F6;
+  --color-text-light: #D1D5DB;
+  --color-text-lighter: #E5E7EB;
   --border-radius-lg: var(--radius);
   --border-radius-md: calc(var(--radius) - 2px);
   --border-radius-sm: calc(var(--radius) - 4px);
@@ -36,39 +37,43 @@
 
 @layer base {
   :root {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
-    --card: 222 47% 11%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 171 100% 70%;
-    --primary-foreground: 222 47% 11%;
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 217 33% 17%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 212 27% 84%;
+    --background: 240 5% 5%;
+    --foreground: 240 20% 96%;
+    --card: 240 5% 5%;
+    --card-foreground: 240 20% 96%;
+    --popover: 240 5% 5%;
+    --popover-foreground: 240 20% 96%;
+    --primary: 285 95% 75%; 
+    --primary-foreground: 240 5% 5%;
+    --secondary: 260 30% 20%;
+    --secondary-foreground: 240 20% 96%;
+    --muted: 260 30% 20%;
+    --muted-foreground: 240 20% 80%;
+    --accent: 285 90% 70%;
+    --accent-foreground: 240 20% 96%;
+    --destructive: 0 63% 45%;
+    --destructive-foreground: 240 20% 96%;
+    --border: 260 20% 30%;
+    --input: 260 20% 30%;
+    --ring: 285 80% 80%;
     --radius: 0.5rem;
   }
+
   * {
     @apply border-[hsl(var(--border))];
   }
+
   html {
     @apply scroll-smooth;
   }
+
   body {
     @apply text-text-white font-sans;
-    background: linear-gradient(-45deg, #0A192F, #1F4068, #162447, #1B1B2F);
+    background: linear-gradient(-45deg, #0A0A0A, #111111, #1A1A1A, #0F0F0F);
     background-size: 400% 400%;
-    animation: gradientBackground 15s ease infinite;
+    animation: gradientBackground 20s ease infinite;
   }
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading font-semibold text-text-lighter;
   }
@@ -76,18 +81,22 @@
 
 @layer utilities {
   .nav-link {
-    @apply relative py-2 px-3 text-text-light hover:text-accent-blue transition-colors duration-300 after:absolute after:block after:w-0 after:h-[2px] after:bg-accent-blue after:bottom-0 after:left-0 after:transition-all after:duration-300 hover:after:w-full;
+    @apply relative py-2 px-3 text-text-light hover:text-accent-purple transition-colors duration-300 after:absolute after:block after:w-0 after:h-[2px] after:bg-accent-purple after:bottom-0 after:left-0 after:transition-all after:duration-300 hover:after:w-full;
   }
+
   .section-heading {
     @apply mb-12 text-3xl md:text-4xl font-bold text-text-lighter inline-flex items-center animate-fade-in-up;
   }
+
   .section-heading::after {
     @apply content-[''] h-[1px] w-28 md:w-72 bg-text-light ml-6 opacity-30;
   }
+
   .section-container {
     @apply max-w-7xl mx-auto px-6 py-24 md:py-32;
   }
+
   .btn-primary {
-    @apply px-6 py-3 bg-transparent border border-accent-blue text-accent-blue font-medium rounded hover:bg-accent-blue/10 transition-colors duration-300 animate-fade-in;
+    @apply px-6 py-3 bg-transparent border border-accent-purple text-accent-purple font-medium rounded hover:bg-accent-purple/10 transition-colors duration-300 animate-fade-in;
   }
 }
