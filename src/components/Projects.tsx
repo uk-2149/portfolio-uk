@@ -5,16 +5,16 @@ const Projects = () => {
       description:
         "A React + Firebase platform to collect disaster aid requests using voice transcription and real-time Firestore updates.",
       tech: ["React", "Firebase", "Twilio", "Express"],
-      github: "https://github.com/yourname/project1",
-      live: "https://yourproject1.netlify.app",
+      github: "",
+      live: "",
     },
     {
       title: "Attendance Tracker",
       description:
         "A Student Attendance tracker to manage attendance, so that you don't have to be in doubt whether you should miss the next class or not.",
       tech: ["React", "Node.js", "MongoDB", "Express"],
-      github: "https://github.com/yourname/project2",
-      live: "https://yourproject2.vercel.app",
+      github: "",
+      live: "",
     },
   ];
 

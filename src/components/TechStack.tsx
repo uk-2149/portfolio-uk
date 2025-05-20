@@ -1,15 +1,15 @@
+import { useState } from "react";
+
+type Category = "Frontend" | "Backend" | "ML";
+
 const TechStack = () => {
-  const skills = [
-    "React",
-    "Tailwind CSS",
-    "Node.js",
-    "MongoDB",
-    "Express",
-    "JavaScript",
-    "TypeScript",
-    "C++",
-    "Python",
-  ];
+  const categories: Record<Category, string[]> = {
+    Frontend: ["React", "Tailwind CSS", "JavaScript", "TypeScript", "HTML5", "CSS3", "Redux", "Next.js"],
+    Backend: ["Node.js", "Express", "MongoDB", "Firebase", "Authentication"],
+    ML: ["Python", "C++", "Pandas", "NumPy", "Scikit-learn", "TensorFlow", "SQL", "Jupyter"],
+  };
+
+  const [selectedCategory, setSelectedCategory] = useState<"Frontend" | "Backend" | "ML">("Frontend");
 
   return (
     <div
@@ -19,16 +19,34 @@ const TechStack = () => {
         color: "var(--color-text-white)",
       }}
     >
-      <h2 className="text-lg font-semibold mb-0 border-b pb-1">Tech Stack</h2>
+      <h2 className="text-lg font-semibold mb-0">Tech Stack</h2>
 
       {/* Divider */}
       <div
-        className="w-full h-[3px] rounded-md mb-6"
+        className="w-full h-[3px] rounded-md mt-1 mb-4"
         style={{ backgroundColor: "var(--color-accent-purple-bright)" }}
       ></div>
 
+      {/* Category */}
+      <div className="flex flex-wrap gap-3 mb-6">
+      {(Object.keys(categories) as Category[]).map((category) => (
+          <button
+            key={category}
+            onClick={() => setSelectedCategory(category)}
+            className={`px-4 py-1 text-sm rounded-lg font-medium border transition-colors duration-200 text-black ${
+              selectedCategory === category
+                ? "bg-[var(--color-accent-purple-bright)]"
+                : "bg-white hover:bg-[var(--color-accent-purple-bright)]"
+            }`}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
+
+      {/* Skills */}
       <div className="flex flex-wrap gap-2">
-        {skills.map((skill, index) => (
+        {categories[selectedCategory].map((skill: string, index: number) => (
           <span
             key={index}
             className="px-3 py-1 text-sm rounded-full border"
