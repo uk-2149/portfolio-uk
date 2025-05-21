@@ -3,18 +3,18 @@ const Projects = () => {
     {
       title: "Disaster Aid Platform",
       description:
-        "A React + Firebase platform to collect disaster aid requests using voice transcription and real-time Firestore updates.",
+        "A platform to collect disaster aid requests using voice transcription and real-time Firestore updates.",
       tech: ["React", "Firebase", "Twilio", "Express"],
-      github: "",
+      github: "https://github.com/uk-2149/disaster-aid",
       live: "",
     },
     {
       title: "Attendance Tracker",
       description:
-        "A Student Attendance tracker to manage attendance, so that you don't have to be in doubt whether you should miss the next class or not.",
+        "A platform to manage attendance, so that you don't have to be in doubt whether you should miss the next class or not.",
       tech: ["React", "Node.js", "MongoDB", "Express"],
-      github: "",
-      live: "",
+      github: "https://github.com/uk-2149/attendance-tracker",
+      live: "https://attendance-tracker-umfa.vercel.app/",
     },
   ];
 
@@ -39,7 +39,7 @@ const Projects = () => {
         {projects.map((project, idx) => (
           <div
             key={idx}
-            className="rounded-xl shadow-sm p-5 border hover:shadow-md transition-shadow min-h-[200px]"
+            className="rounded-xl shadow-sm p-5 border hover:shadow-md transition-shadow h-fit"
             style={{
               backgroundColor: "var(--color-darker)",
               borderColor: "var(--color-darkest)",
@@ -87,15 +87,17 @@ const Projects = () => {
               >
                 GitHub
               </a>
-              <a
-                href={project.live}
-                target="_blank"
-                rel="noreferrer"
-                className="text-sm hover:underline"
-                style={{ color: "var(--color-accent-purple)" }}
-              >
-                Live Demo
-              </a>
+              {project.live && (
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sm hover:underline"
+                  style={{ color: "var(--color-accent-purple)" }}
+                >
+                  Live Demo
+                </a>
+              )}
             </div>
           </div>
         ))}

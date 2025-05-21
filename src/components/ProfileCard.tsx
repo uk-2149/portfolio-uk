@@ -1,7 +1,9 @@
+import profileImage from "../assets/profile.jpg";
+
 const ProfileCard = () => {
   return (
     <div
-      className="rounded-2xl shadow-md p-6 w-full max-w-xs text-center"
+      className="rounded-2xl shadow-md p-6 w-full text-center"
       style={{
         backgroundColor: "var(--color-darker)",
         color: "var(--color-text-white)",
@@ -14,7 +16,8 @@ const ProfileCard = () => {
           className="w-24 h-24 rounded-full overflow-hidden border-4 mb-4"
           style={{ borderColor: "var(--color-accent-purple)" }}
         >
-          <img src="" alt="Profile" className="w-full h-full object-cover" />
+          {/* <iframe src="https://drive.google.com/file/d/1uWUsUJr-IEPC-0iy0RaMkJwyjSYrGE_2/preview" className="w-full h-full object-cover pointer-events-none"></iframe> */}
+          <img src={profileImage} alt="Profile" />
         </div>
 
         {/* Name */}
@@ -37,7 +40,10 @@ const ProfileCard = () => {
         <div className="flex">
           <a
             href="/"
-            download
+            // download
+            onClick={() => {
+              alert("will be available soon!");
+            }}
             className="text-sm px-4 py-2 rounded-lg"
             style={{
               backgroundColor: "var(--color-accent-purple)",

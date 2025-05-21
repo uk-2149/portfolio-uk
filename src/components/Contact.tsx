@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Github } from "lucide-react";
+import { Mail, Linkedin, Github, Twitter } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -46,6 +46,17 @@ const Contact = () => {
             className="hover:underline text-[var(--color-text-white)]"
           >
             github.com/uk-2149
+          </a>
+        </div>
+        <div className="flex items-center gap-3">
+          <Twitter size={18} color="var(--color-accent-purple-bright)" />
+          <a
+            href="https://x.com/uk_2149"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline text-[var(--color-text-white)]"
+          >
+            x.com/uk-2149
           </a>
         </div>
       </div>
