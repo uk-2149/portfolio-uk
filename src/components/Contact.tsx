@@ -34,7 +34,7 @@ const Contact = () => {
             rel="noopener noreferrer"
             className="hover:underline text-[var(--color-text-white)]"
           >
-            linkedin.com/in/utkal-kumar-das
+            linkedin.com/in/utkal
           </a>
         </div>
         <div className="flex items-center gap-3">

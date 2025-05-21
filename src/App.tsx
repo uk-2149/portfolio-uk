@@ -55,7 +55,7 @@ function App() {
         {/* Profile */}
         <div className="w-full md:w-1/4 flex flex-col gap-6 justify-center h-fit">
           <div ref={profileCardRef}>
-            <ProfileCard />
+            <ProfileCard onContactClick={scrollToContact} />
           </div>
           <About />
           <div className="hidden md:block">
@@ -74,7 +74,9 @@ function App() {
           <div className="block md:hidden">
             <Current />
           </div>
-          <Contact />
+          <div id="contact">
+            <Contact />
+          </div>
         </div>
       </div>
     </div>

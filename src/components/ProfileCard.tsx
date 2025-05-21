@@ -1,6 +1,6 @@
 import profileImage from "../assets/profile.jpg";
 
-const ProfileCard = () => {
+const ProfileCard = ({ onContactClick }: { onContactClick: () => void }) => {
   return (
     <div
       className="rounded-2xl shadow-md p-6 w-full text-center"
@@ -37,7 +37,7 @@ const ProfileCard = () => {
         </p>
 
         {/* Buttons */}
-        <div className="flex">
+        <div className="flex gap-3">
           <a
             href="/"
             // download
@@ -52,6 +52,16 @@ const ProfileCard = () => {
           >
             Resume
           </a>
+          <button
+            onClick={onContactClick}
+            className="text-sm px-4 py-2 rounded-lg md:hidden"
+            style={{
+              backgroundColor: "var(--color-accent-purple)",
+              color: "var(--color-darkest)",
+            }}
+          >
+            Contact
+          </button>
         </div>
       </div>
     </div>
