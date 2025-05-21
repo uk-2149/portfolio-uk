@@ -4,12 +4,32 @@ type Category = "Frontend" | "Backend" | "ML";
 
 const TechStack = () => {
   const categories: Record<Category, string[]> = {
-    Frontend: ["React", "Tailwind CSS", "JavaScript", "TypeScript", "HTML5", "CSS3", "Redux", "Next.js"],
+    Frontend: [
+      "React",
+      "Tailwind CSS",
+      "JavaScript",
+      "TypeScript",
+      "HTML5",
+      "CSS3",
+      "Redux",
+      "Next.js",
+    ],
     Backend: ["Node.js", "Express", "MongoDB", "Firebase", "Authentication"],
-    ML: ["Python", "C++", "Pandas", "NumPy", "Scikit-learn", "TensorFlow", "SQL", "Jupyter"],
+    ML: [
+      "Python",
+      "C++",
+      "Pandas",
+      "NumPy",
+      "Scikit-learn",
+      "TensorFlow",
+      "SQL",
+      "Jupyter",
+    ],
   };
 
-  const [selectedCategory, setSelectedCategory] = useState<"Frontend" | "Backend" | "ML">("Frontend");
+  const [selectedCategory, setSelectedCategory] = useState<
+    "Frontend" | "Backend" | "ML"
+  >("Frontend");
 
   return (
     <div
@@ -18,6 +38,7 @@ const TechStack = () => {
         backgroundColor: "var(--color-darker)",
         color: "var(--color-text-white)",
       }}
+      data-aos="fade-left"
     >
       <h2 className="text-lg font-semibold mb-0">Tech Stack</h2>
 
@@ -29,7 +50,7 @@ const TechStack = () => {
 
       {/* Category */}
       <div className="flex flex-wrap gap-3 mb-6">
-      {(Object.keys(categories) as Category[]).map((category) => (
+        {(Object.keys(categories) as Category[]).map((category) => (
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}

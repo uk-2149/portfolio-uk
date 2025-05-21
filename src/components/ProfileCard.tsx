@@ -6,6 +6,7 @@ const ProfileCard = () => {
         backgroundColor: "var(--color-darker)",
         color: "var(--color-text-white)",
       }}
+      data-aos="fade-right"
     >
       <div className="flex flex-col items-center">
         {/* Profile Picture */}

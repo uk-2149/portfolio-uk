@@ -5,14 +5,16 @@ const Contact = () => {
     <div
       className="rounded-xl shadow p-6"
       style={{
-        backgroundColor: 'var(--color-darker)',
-        color: 'var(--color-text-white)',
+        backgroundColor: "var(--color-darker)",
+        color: "var(--color-text-white)",
       }}
+      data-aos="fade-left"
+      data-aos-delay="200"
     >
       <h2 className="text-xl font-semibold mb-1">Contact</h2>
       <div
         className="w-full h-[3px] rounded-md mb-5"
-        style={{ backgroundColor: 'var(--color-accent-purple-bright)' }}
+        style={{ backgroundColor: "var(--color-accent-purple-bright)" }}
       ></div>
       <div className="space-y-3 text-sm">
         <div className="flex items-center gap-3">

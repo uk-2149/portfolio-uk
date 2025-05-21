@@ -39,12 +39,15 @@ const Projects = () => {
         {projects.map((project, idx) => (
           <div
             key={idx}
-            className="rounded-xl shadow-sm p-5 border hover:shadow-md transition-shadow"
+            className="rounded-xl shadow-sm p-5 border hover:shadow-md transition-shadow min-h-[200px]"
             style={{
               backgroundColor: "var(--color-darker)",
               borderColor: "var(--color-darkest)",
               color: "var(--color-text-light)",
             }}
+            data-aos="fade-up"
+            data-aos-delay={idx === 0 ? 0 : idx * 200}
+            data-aos-easing="ease-out-cubic"
           >
             <h3
               className="text-lg font-bold"
