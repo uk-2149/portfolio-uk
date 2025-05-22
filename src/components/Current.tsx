@@ -1,6 +1,5 @@
 const Current = () => {
   const updates = [
-    { date: "23 May", activity: "Starting testimonial.to clone" },
     { date: "19 May", activity: "end sems 🥲" },
     { date: "17 May", activity: "Working on portfolio" },
   ];
