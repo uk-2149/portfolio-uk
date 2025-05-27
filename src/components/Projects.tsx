@@ -1,7 +1,15 @@
 const Projects = () => {
   const projects = [
     {
-      title: "Disaster Aid Platform",
+      title: "QuizGen",
+      description:
+        "A file-to-quiz generator that converts uploaded documents into customizable quizes, supporting different difficulty levels and question types.",
+      tech: ["React", "Firebase", "Gemini API", "Express"],
+      github: "https://github.com/uk-2149/pdf-quiz",
+      live: "https://quizgen-xi.vercel.app/",
+    },
+    {
+      title: "Disaster Aid",
       description:
         "A platform to collect disaster aid requests using voice transcription and real-time Firestore updates.",
       tech: ["React", "Firebase", "Twilio", "Express"],
