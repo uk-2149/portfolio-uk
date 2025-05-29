@@ -8,6 +8,7 @@ import Current from "./components/Current";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
 import AOS from "aos";
+import { Analytics } from '@vercel/analytics/react';
 
 import "aos/dist/aos.css";
 
@@ -79,6 +80,7 @@ function App() {
           </div>
         </div>
       </div>
+      <Analytics />
     </div>
   );
 }
