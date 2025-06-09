@@ -1,8 +1,8 @@
 const Current = () => {
   const updates = [
+    { date: "07 May", activity: "Implemented backend to EduTR" },
+    { date: "04 May", activity: "Working on testimonial.io clone" },
     { date: "26 May", activity: "Built a pdf-to-quiz converter" },
-    { date: "19 May", activity: "end sems 🥲" },
-    { date: "17 May", activity: "Working on portfolio" },
   ];
 
   return (
