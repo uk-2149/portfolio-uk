@@ -39,11 +39,7 @@ const ProfileCard = ({ onContactClick }: { onContactClick: () => void }) => {
         {/* Buttons */}
         <div className="flex gap-3">
           <a
-            href="/"
-            // download
-            onClick={() => {
-              alert("will be available soon!");
-            }}
+            href="https://drive.google.com/file/d/1BEGHQd49nrRijlboz8RkhZtG6Xj1Pogb/view?usp=drivesdk" 
             className="text-sm px-4 py-2 rounded-lg"
             style={{
               backgroundColor: "var(--color-accent-purple)",
