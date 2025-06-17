@@ -99,4 +99,18 @@
   .btn-primary {
     @apply px-6 py-3 bg-transparent border border-accent-purple text-accent-purple font-medium rounded hover:bg-accent-purple/10 transition-colors duration-300 animate-fade-in;
   }
+
+  .focus\:ring-accent-purple:focus {
+    --tw-ring-color: var(--color-accent-purple);
+  }
+
+  /* @media (max-width: 767px) {
+    img {
+      height: 40vw !important;
+    }
+  } */
+
+  .flex-wrap {
+    row-gap: 0.5rem;
+  }
 }

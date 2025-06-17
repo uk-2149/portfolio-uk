@@ -65,7 +65,7 @@ function App() {
         </div>
 
         {/* Projects */}
-        <div className="w-full md:w-2/4 md:pr-2">
+        <div className="w-full md:w-2/4">
           <Projects />
         </div>
 
