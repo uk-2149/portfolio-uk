@@ -1,4 +1,5 @@
 import { useState } from "react";
+import useIsMobile from "../hooks/useIsMobile";
 
 type Category = "Frontend" | "Backend" | "ML";
 
@@ -31,6 +32,10 @@ const TechStack = () => {
     "Frontend" | "Backend" | "ML"
   >("Frontend");
 
+  const isMobile = useIsMobile();
+
+  const dataAosType = isMobile ? "fade-up" : "fade-left";
+
   return (
     <div
       className="rounded-xl shadow p-4"
@@ -38,7 +43,7 @@ const TechStack = () => {
         backgroundColor: "var(--color-darker)",
         color: "var(--color-text-white)",
       }}
-      data-aos="fade-left"
+      data-aos={dataAosType}
     >
       <h2 className="text-lg font-semibold mb-0">Tech Stack</h2>
 

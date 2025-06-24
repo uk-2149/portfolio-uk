@@ -1,6 +1,13 @@
 import { Mail, Linkedin, Github, Twitter } from "lucide-react";
+import useIsMobile from "../hooks/useIsMobile";
 
 const Contact = () => {
+
+  const isMobile = useIsMobile();
+
+  const dataAosType = isMobile ? "fade-up" : "fade-left";
+
+
   return (
     <div
       className="rounded-xl shadow p-6"
@@ -8,7 +15,7 @@ const Contact = () => {
         backgroundColor: "var(--color-darker)",
         color: "var(--color-text-white)",
       }}
-      data-aos="fade-left"
+      data-aos={dataAosType}
       data-aos-delay="200"
     >
       <h2 className="text-xl font-semibold mb-1">Contact</h2>

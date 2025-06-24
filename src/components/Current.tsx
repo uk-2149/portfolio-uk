@@ -1,8 +1,14 @@
+import useIsMobile from "../hooks/useIsMobile";
+
 const Current = () => {
   const updates = [
     { date: "12 June", activity: "Building testimonial.to clone" },
     { date: "26 May", activity: "Built a pdf-to-quiz converter" },
   ];
+
+  const isMobile = useIsMobile();
+
+  const dataAosType = isMobile ? "fade-up" : "fade-right";
 
   return (
     <div
@@ -11,7 +17,7 @@ const Current = () => {
         backgroundColor: "var(--color-darker)",
         color: "var(--color-text-white)",
       }}
-      data-aos="fade-right"
+      data-aos={dataAosType}
       data-aos-delay="400"
     >
       <h2 className="text-lg font-semibold mb-0 border-b pb-1">
